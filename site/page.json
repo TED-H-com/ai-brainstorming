@@ -1,5 +1,5 @@
 {
-  "repo": "teddashh/ai-brainstorming",
+  "repo": "TED-H-com/ai-brainstorming",
   "slug": "ai-brainstorming",
   "name": "AI Brainstorming",
   "mark": "AB",
@@ -21,7 +21,7 @@
       "zh": "Claude、Gemini、Grok、ChatGPT 和 DeepSeek 同時作答，跑 5、12 或 16 輪：先立論，再攻防，最後收斂。送出後馬上拿到接續連結，跑完再拿到 Markdown 格式的完整紀錄。"
     },
     "primary": {"href": "#start", "label": {"en": "Run it locally", "zh": "在本機跑起來"}},
-    "secondary": {"href": "https://github.com/teddashh/ai-brainstorming", "label": {"en": "View source", "zh": "查看原始碼"}},
+    "secondary": {"href": "https://github.com/TED-H-com/ai-brainstorming", "label": {"en": "View source", "zh": "查看原始碼"}},
     "notes": [
       "Hono + React + SQLite",
       "OpenRouter",
@@ -127,7 +127,7 @@
       "en": "You need Node.js 22 and an OpenRouter API key. Vite 8 accepts 20.19+ or 22.12+, but avoid Node 24 for now (see the limits below). SearXNG and SMTP are optional. There is no hosted demo.",
       "zh": "需要 Node.js 22 和一組 OpenRouter API key。Vite 8 接受 20.19+ 或 22.12+，但目前請避開 Node 24（原因見下方限制）。SearXNG 與 SMTP 可有可無。目前沒有公開的線上版本。"
     },
-    "primary": {"href": "https://github.com/teddashh/ai-brainstorming/blob/main/.env.example", "label": {"en": "All settings", "zh": "所有設定"}},
+    "primary": {"href": "https://github.com/TED-H-com/ai-brainstorming/blob/main/.env.example", "label": {"en": "All settings", "zh": "所有設定"}},
     "steps": [
       {"title": {"en": "Install and build", "zh": "安裝並建置"},
        "body": {"en": "In a clone of this repository, install and build both server/ and web/.", "zh": "在 clone 下來的 repo 裡，一次安裝並建置 server/ 與 web/。"},
@@ -173,9 +173,9 @@
     {"label": {"en": "Verified", "zh": "查核日期"}, "value": "2026-10-06"}
   ],
   "links": [
-    {"href": "https://github.com/teddashh/ai-brainstorming/blob/main/.env.example", "label": {"en": "Settings", "zh": "設定範例"}},
-    {"href": "https://github.com/teddashh/ai-brainstorming/blob/main/README.zh-TW.md", "label": {"en": "中文 README", "zh": "中文 README"}},
-    {"href": "https://teddashh.github.io/claude-idea-review-skill/", "label": {"en": "Related: idea review as a Claude Code skill", "zh": "相關專案：Claude Code 點子審查 skill"}}
+    {"href": "https://github.com/TED-H-com/ai-brainstorming/blob/main/.env.example", "label": {"en": "Settings", "zh": "設定範例"}},
+    {"href": "https://github.com/TED-H-com/ai-brainstorming/blob/main/README.zh-TW.md", "label": {"en": "中文 README", "zh": "中文 README"}},
+    {"href": "https://ted-h-com.github.io/claude-idea-review-skill/", "label": {"en": "Related: idea review as a Claude Code skill", "zh": "相關專案：Claude Code 點子審查 skill"}}
   ],
   "flows": [
     {

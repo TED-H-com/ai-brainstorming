@@ -4,7 +4,7 @@
 
 Standalone web MVP for a multi-model idea review panel at `/idea`.
 
-**Project page:** https://teddashh.github.io/ai-brainstorming/
+**Project page:** https://ted-h-com.github.io/ai-brainstorming/
 
 Users enter an email and an idea, choose 5 / 12 / 16 rounds, receive a resume link, and get the review transcript as Markdown: on the page, as a download, and by email when SMTP is configured.
 
@@ -117,7 +117,7 @@ All limits are in memory, per one-hour window, and answer `429` with `Retry-Afte
 
 ## Related
 
-- [claude-idea-review-skill](https://teddashh.github.io/claude-idea-review-skill/) runs a similar 5 / 12 / 16-round idea review inside Claude Code.
+- [claude-idea-review-skill](https://ted-h-com.github.io/claude-idea-review-skill/) runs a similar 5 / 12 / 16-round idea review inside Claude Code.
 
 ## License
 
