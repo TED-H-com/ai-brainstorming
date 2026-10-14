@@ -4,7 +4,7 @@
 
 放在 `/idea` 的獨立網頁 MVP：由多個模型組成的點子審查小組。
 
-**專案介紹頁：** https://teddashh.github.io/ai-brainstorming/?lang=zh-TW
+**專案介紹頁：** https://ted-h-com.github.io/ai-brainstorming/?lang=zh-TW
 
 使用者留下 email 和點子，選擇 5 / 12 / 16 輪，先拿到接續連結，跑完再拿到 Markdown 格式的審查紀錄：可以直接在頁面上看、下載，有設定 SMTP 時也會寄到信箱。
 
@@ -117,7 +117,7 @@ repo 裡沒有任何機密。執行資料放在 `data/`（用 `npm start` 啟動
 
 ## 相關專案
 
-- [claude-idea-review-skill](https://teddashh.github.io/claude-idea-review-skill/?lang=zh-TW)：在 Claude Code 裡跑類似的 5 / 12 / 16 輪點子審查。
+- [claude-idea-review-skill](https://ted-h-com.github.io/claude-idea-review-skill/?lang=zh-TW)：在 Claude Code 裡跑類似的 5 / 12 / 16 輪點子審查。
 
 ## 授權
 

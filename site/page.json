@@ -175,7 +175,7 @@
   "links": [
     {"href": "https://github.com/teddashh/ai-brainstorming/blob/main/.env.example", "label": {"en": "Settings", "zh": "設定範例"}},
     {"href": "https://github.com/teddashh/ai-brainstorming/blob/main/README.zh-TW.md", "label": {"en": "中文 README", "zh": "中文 README"}},
-    {"href": "https://teddashh.github.io/claude-idea-review-skill/", "label": {"en": "Related: idea review as a Claude Code skill", "zh": "相關專案：Claude Code 點子審查 skill"}}
+    {"href": "https://ted-h-com.github.io/claude-idea-review-skill/", "label": {"en": "Related: idea review as a Claude Code skill", "zh": "相關專案：Claude Code 點子審查 skill"}}
   ],
   "flows": [
     {
