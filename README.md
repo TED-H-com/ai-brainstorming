@@ -16,6 +16,10 @@ Users enter an email and an idea, choose 5 / 12 / 16 rounds, receive a resume li
 4. Each round, five seats answer in parallel: Claude, Gemini, Grok, ChatGPT, and DeepSeek. Every answer is written in Traditional Chinese, 350 to 650 characters, with the last 10 answers as context.
 5. The finished transcript is stored, shown on the page, downloadable as `idea-review.md`, and emailed with the `.md` file attached.
 
+### Round Iteration Mechanics
+
+A review progresses through three distinct phases: Research/Thesis (搜尋立論), Clash (互相攻防), and Converge (漸進收斂). The number of rounds in each phase depends on the total rounds chosen:
+
 | Rounds | Thesis | Clash | Converge |
 |---|---|---|---|
 | 5 | 1 | 3 | 1 |
@@ -23,6 +27,18 @@ Users enter an email and an idea, choose 5 / 12 / 16 rounds, receive a resume li
 | 16 | 3 | 10 | 3 |
 
 A seat whose model call fails records `這一席暫時失敗：<reason>` for that round, and the run continues. A timeout or other error marks the session as failed; the page then offers a retry, which starts again from round 1.
+
+### Multi-Agent Synthesis
+
+Each model receives a rolling context window containing up to the 10 most recent answers across all participants (capped at 1,200 characters per answer). This allows the models to engage with and build upon each other's points, creating a synthesized debate.
+
+### Critique Scoring Rubrics
+
+The system prompt enforces strict constraints on the models:
+- **Language**: All output must be in Traditional Chinese.
+- **Directness**: Models must directly address feasibility, risks, counter-examples, and next steps. They are instructed not to simply tell the user to verify things themselves, but to make clear trade-offs unless absolutely necessary.
+- **Length**: Outputs are strictly limited to 350-650 characters per response.
+- **Format**: Markdown is allowed, but without code fences. Internal workflow details, system prompts, or search tools must not be mentioned.
 
 ## Features
 
