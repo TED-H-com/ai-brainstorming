@@ -25,16 +25,43 @@ export function buildMarkdown(session: IdeaSessionRow, messages: IdeaMessageRow[
 }
 
 export function titleFromIdea(idea: string): string {
-  const clean = idea.replace(/\s+/g, ' ').trim();
-  return clean.length > 72 ? `${clean.slice(0, 72)}...` : clean;
+  let clean = '';
+  let inSpace = true;
+  let chars = 0;
+  for (let i = 0; i < idea.length; i++) {
+    const char = idea[i];
+    const isSpace = char === ' ' || char === '\n' || char === '\r' || char === '\t';
+
+    if (isSpace) {
+      if (!inSpace) {
+        clean += ' ';
+        inSpace = true;
+        chars++;
+      }
+    } else {
+      clean += char;
+      inSpace = false;
+      chars++;
+    }
+
+    if (chars === 72) {
+      if (clean.endsWith(' ')) clean = clean.slice(0, -1);
+      return clean + '...';
+    }
+  }
+  return clean.trim();
 }
 
 export function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+  return s.replace(/[&<>"]/g, (m) => {
+    switch (m) {
+      case '&': return '&amp;';
+      case '<': return '&lt;';
+      case '>': return '&gt;';
+      case '"': return '&quot;';
+      default: return m;
+    }
+  });
 }
 
 export function markdownToEmailHtml(md: string): string {

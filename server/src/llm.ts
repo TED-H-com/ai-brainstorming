@@ -20,22 +20,27 @@ function renderHistory(history: StepResult[]): string {
     .join('\n\n---\n\n')}`;
 }
 
-function sanitizeModelText(text: string): string {
+export function sanitizeModelText(text: string): string {
   const blocked = /\b(system prompt|workflow|searxng)\b|提示詞|系統提示/i;
-  const paragraphs = text
-    .replace(/\r\n/g, '\n')
-    .split(/\n{2,}/)
-    .map((p) => p.trim())
-    .filter(Boolean)
-    .filter((p) => !blocked.test(p));
+  const paragraphs = text.split(/\r?\n\s*\r?\n/);
   const seen = new Set<string>();
-  const deduped = paragraphs.filter((p) => {
-    const key = p.replace(/\s+/g, ' ').toLowerCase();
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-  return (deduped.length > 0 ? deduped : [text.trim()]).join('\n\n');
+  const deduped = [];
+
+  for (let p of paragraphs) {
+    p = p.trim();
+    if (!p) continue;
+    if (blocked.test(p)) continue;
+
+    const key = p.toLowerCase().replace(/\s+/g, ' ');
+    if (!seen.has(key)) {
+      seen.add(key);
+      deduped.push(p);
+    }
+  }
+
+  if (deduped.length > 0) return deduped.join('\n\n');
+  if (blocked.test(text)) return '';
+  return text.trim();
 }
 
 export function buildPrompt(args: {
